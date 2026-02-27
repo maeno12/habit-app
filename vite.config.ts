@@ -8,6 +8,9 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true
+      },
       manifest: {
         name: '習慣の記録',
         short_name: '習慣',
@@ -15,6 +18,8 @@ export default defineConfig({
         theme_color: '#f97316',
         background_color: '#fff7ed',
         display: 'standalone',
+        start_url: '/',
+        scope: '/',
         orientation: 'portrait',
         icons: [
           {

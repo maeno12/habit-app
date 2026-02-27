@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import { useHabit } from '../composables/useHabit'
 import { useNotification } from '../composables/useNotification'
 import AppNav from '../components/AppNav.vue'
+import InstallPwaButton from '../components/InstallPwaButton.vue'
 
 const {
   habitName,
@@ -55,6 +56,8 @@ onMounted(() => checkAndNotify())
 
       <p v-if="isTodayRecorded" class="done-msg">今日の記録は完了しています</p>
       <p v-else class="tap-msg">画面をタップして今日の記録を追加</p>
+
+      <InstallPwaButton />
     </main>
     <AppNav />
   </div>
