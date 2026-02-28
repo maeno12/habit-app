@@ -47,3 +47,26 @@ npm run preview
 
 - 習慣名・記録日はすべて **localStorage** に保存されます（サーバー不要）。
 - 記録をリセットすると過去の記録日はすべて削除されます。
+
+## Vercel へのデプロイ
+
+このプロジェクトは `vercel.json` で SPA ルーティングとビルド設定済みです。
+
+### 方法1: Vercel CLI
+
+1. [Vercel](https://vercel.com) にログインし、[Vercel CLI](https://vercel.com/docs/cli) をインストール:
+   ```bash
+   npm i -g vercel
+   ```
+2. プロジェクトルートで実行:
+   ```bash
+   vercel
+   ```
+3. プロンプトに従い（初回はログイン・プロジェクト名など）、デプロイ完了後に表示される URL でアクセスできます。本番デプロイは `vercel --prod` で実行します。
+
+### 方法2: GitHub と連携
+
+1. このリポジトリを GitHub にプッシュする。
+2. [vercel.com](https://vercel.com) で **Add New Project** を選択し、対象の GitHub リポジトリをインポートする。
+3. **Framework Preset** は **Vite** のまま（または自動検出）、**Build Command** は `npm run build`、**Output Directory** は `dist` のままデプロイする。
+4. デプロイ後、プッシュのたびに自動でビルド・デプロイされます。
