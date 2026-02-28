@@ -30,8 +30,9 @@ function reset() {
   if (!confirm('記録をすべてリセットします。よろしいですか？')) return
   resetting.value = true
   resetRecords()
+  setHabitName('')
   resetting.value = false
-  router.replace({ name: 'home' })
+  router.replace({ name: 'welcome' })
 }
 </script>
 
