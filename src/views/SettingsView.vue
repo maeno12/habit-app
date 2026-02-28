@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { useHabit } from '../composables/useHabit'
 import { useNotification } from '../composables/useNotification'
 import AppNav from '../components/AppNav.vue'
 
+const router = useRouter()
 const { habitName, setHabitName, resetRecords } = useHabit()
 const { permission, requestPermission, reminderHour, saveReminderHour, checkAndNotify } = useNotification()
 
@@ -29,6 +31,7 @@ function reset() {
   resetting.value = true
   resetRecords()
   resetting.value = false
+  router.replace({ name: 'home' })
 }
 </script>
 
